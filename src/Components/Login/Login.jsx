@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from "../../Shared/SocialLogin";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     // show pass and hide pass
@@ -9,6 +11,11 @@ const Login = () => {
     return (
         <div
             className="max-w-7xl mx-auto mt-6">
+            <Helmet>
+                <title>
+                    Login | Travel Guru
+                </title>
+            </Helmet>
             <div
                 className="w-full max-w-md mx-auto border-2 px-8 py-4 rounded-md">
                 <h2
@@ -103,15 +110,16 @@ const Login = () => {
                     </div>
                     <p
                         className="font-medium text-base mt-3 mb-3 text-center">
-                        Don’t have an account? <span
+                        Don’t have an account? <Link
+                            to="/signUp"
                             className="link link-warning hover:text-gray-500">
                             Create an account
-                        </span>
+                        </Link>
                     </p>
                 </form>
             </div>
             <div>
-                <SocialLogin/>
+                <SocialLogin />
             </div>
         </div>
     );
