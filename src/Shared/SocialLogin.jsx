@@ -4,7 +4,7 @@ import fbLogo from '../assets/images/icons/fb.png';
 import googleLogo from '../assets/images/icons/google.png';
 
 const SocialLogin = () => {
-    const { googleSignIn } = useAuth();
+    const { googleSignIn, facebookSignIn } = useAuth();
 
     // handleGoogleSignIn function
     const handleGoogleSignIn = () => {
@@ -15,6 +15,20 @@ const SocialLogin = () => {
                 toast.success('Your Google Login Successful')
             })
     };
+
+    // handleFacebookLogin function
+    const handleFacebookLogin = () => {
+        facebookSignIn()
+            .then((result) => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                toast.success('Your Facebook Login Successful')
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    };
+
     return (
         <div
             className="w-full max-w-sm mx-auto">
@@ -24,6 +38,7 @@ const SocialLogin = () => {
             </div>
             {/* facebook sigIn start */}
             <div
+                onClick={handleFacebookLogin}
                 className="border-2 rounded-full flex items-center">
                 <img
                     className="w-[10%] m-2"

@@ -2,12 +2,42 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import SocialLogin from "../../Shared/SocialLogin";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import useAuth from "../../Hooks/UseAuth";
 
 const Login = () => {
     // show pass and hide pass
     const [show, setShow] = useState();
 
+    const { userLogIn } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    // handleUserLogin function
+    const handleUserLogin = (event) => {
+        // stop reloading
+        event.preventDefault();
+        // get the info form the field
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        // userLogIn function
+        userLogIn(email, password).then(result => {
+            const logIn = result.user;
+            navigate(from, { replace: true })
+            // show the toast
+            toast.success('Log in Successful')
+        })
+            .catch(error => {
+                toast.error('Wrong Password')
+                console.log(error);
+            })
+        // reset the from
+        form.reset()
+    }
     return (
         <div
             className="max-w-7xl mx-auto mt-6">
@@ -22,7 +52,9 @@ const Login = () => {
                     className="text-3xl p-3">
                     Login
                 </h2>
-                <form>
+                {/* form section start */}
+                <form
+                    onSubmit={handleUserLogin}>
                     <div className="form-control">
                         <label
                             className="label">

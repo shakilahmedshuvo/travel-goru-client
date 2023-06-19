@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from '../../Firebase/firebase.config';
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
@@ -8,19 +8,21 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // google Provider
+    // Providers
     const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
 
     // create new user
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
-    }
+    };
+
     // user login
     const userLogIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
-    }
+    };
 
     // 
     const updateUserProfile = (name, photo) => {
@@ -28,19 +30,25 @@ const AuthProvider = ({ children }) => {
             displayName: name,
             photoURL: photo
         });
-    }
-
-    // google sign in
-    const googleSignIn = () => {
-        setLoading(true);
-        return signInWithPopup(auth, googleProvider);
-    }
+    };
 
     // user signOut
     const userLogOut = () => {
         setLoading(true);
         return signOut(auth);
-    }
+    };
+
+    // google sign in
+    const googleSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    };
+
+    // facebook sign in
+    const facebookSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, facebookProvider)
+    };
 
     // onAuthStateChanged function
     useEffect(() => {
@@ -58,6 +66,7 @@ const AuthProvider = ({ children }) => {
         user,
         updateUserProfile,
         googleSignIn,
+        facebookSignIn,
         createUser,
         userLogIn,
         userLogOut,
