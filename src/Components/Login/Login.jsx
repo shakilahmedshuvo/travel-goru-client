@@ -102,7 +102,7 @@ const Login = () => {
                         </button>
                     </div>
                     <p
-                        className="font-medium text-base mt-2 mb-3 text-center">
+                        className="font-medium text-base mt-3 mb-3 text-center">
                         Don’t have an account? <span
                             className="link link-warning hover:text-gray-500">
                             Create an account
