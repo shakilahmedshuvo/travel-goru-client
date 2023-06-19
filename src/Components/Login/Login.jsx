@@ -1,40 +1,18 @@
-import { Link } from "react-router-dom";
-import useAuth from "../../Hooks/UseAuth";
-import { toast } from "react-hot-toast";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import SocialLogin from "../../Shared/SocialLogin";
 
 const Login = () => {
-    const { googleSignIn } = useAuth();
-
-    // handleGoogleSignIn function
-    const handleGoogleSignIn = () => {
-        googleSignIn()
-            .then(result => {
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
-                toast.success('Your Google Login Successful')
-            })
-    };
-
     // show pass and hide pass
     const [show, setShow] = useState();
 
     return (
         <div
-            className="hero max-w-7xl mx-auto mt-6">
-            {/* <h2>
-                this is login
-            </h2>
-            <p
-                onClick={handleGoogleSignIn}>
-                goggle
-            </p> */}
-            {/*  */}
+            className="max-w-7xl mx-auto mt-6">
             <div
                 className="w-full max-w-md mx-auto border-2 px-8 py-4 rounded-md">
                 <h2
-                className="text-3xl p-3">
+                    className="text-3xl p-3">
                     Login
                 </h2>
                 <form>
@@ -54,7 +32,7 @@ const Login = () => {
                             required />
                     </div>
                     <div
-                        className="form-control mt-4">
+                        className="form-control">
                         <label
                             className="label">
                             <span
@@ -109,7 +87,7 @@ const Login = () => {
                         {/* check box end */}
                         <div>
                             <a
-                                className="link link-warning hover:text-black">
+                                className="link link-warning hover:text-gray-500">
                                 Forgot Password
                             </a>
                         </div>
@@ -126,11 +104,14 @@ const Login = () => {
                     <p
                         className="font-medium text-base mt-2 mb-3 text-center">
                         Don’t have an account? <span
-                            className="link link-warning hover:text-black">
+                            className="link link-warning hover:text-gray-500">
                             Create an account
                         </span>
                     </p>
                 </form>
+            </div>
+            <div>
+                <SocialLogin/>
             </div>
         </div>
     );
