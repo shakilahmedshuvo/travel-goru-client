@@ -66,7 +66,7 @@ const Login = () => {
                         <input
                             name="email"
                             type="text"
-                            placeholder="Enter Your Email"
+                            placeholder="Your Email"
                             className="input input-bordered"
                             required />
                     </div>
@@ -87,7 +87,7 @@ const Login = () => {
                                     :
                                     'password'
                             }
-                            placeholder="Enter Your Password"
+                            placeholder="Your Password"
                             className="input input-bordered"
                             required />
                         {/* show or hide btn */}
