@@ -9,45 +9,45 @@ const Home = () => {
     let slides = [
         {
             url: imgOne,
-            title: "beach",
+            title: "Cox’s  Bazar",
             description:
-                "Escape to the pristine sands and turquoise waters of our breathtaking beach. Experience ultimate relaxation, adventure, and serenity as you soak up the sun and let your worries wash away with the gentle waves. Come discover your perfect paradise and make memories that will last a lifetime.",
+                "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
             id: 0,
         },
         {
-            url: img,
-            title: "boat",
-            description:
-                "Embark on an unforgettable journey across the open seas with our luxurious and state-of-the-art boats. Whether youre seeking thrilling adventures or peaceful escapes, our vessels offer the perfect blend of comfort and excitement. Experience the freedom and exhilaration of life on the water, as you explore new horizons and create lifelong memories with those closest to you",
             id: 1,
+            url: img,
+            title: "Sreemangal",
+            description:
+                "Sreemangal is a small town located in the northeastern part of Bangladesh. It is known as the tea capital of the country due to its vast tea gardens and plantations. The area is blessed with lush green landscapes, rolling hills, and numerous streams. Sreemangal is famous for its exquisite tea, especially the world-renowned seven-color tea.The region is also home to Lawachara National Park, a haven for wildlife and bird enthusiasts. The park is known for its diverse flora and fauna, including the critically endangered Hoolock gibbon. Sreemangal offers a peaceful and serene environment, attracting nature lovers and tourists alike.",
         },
         {
-            url: "https://images.pexels.com/photos/2700573/pexels-photo-2700573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "forest",
-            description:
-                "Discover the awe-inspiring beauty of nature in our enchanting forest. Immerse yourself in the tranquil surroundings, breathe in the fresh air, and allow yourself to be fully present in the moment. Experience the thrill of adventure as you hike, bike, or simply stroll through our stunning wilderness. Come explore the wonders of our forest and reconnect with the natural world in a truly unforgettable way.",
             id: 2,
+            url: img,
+            title: "Sundarbans",
+            description:
+                "The Sundarbans is a vast mangrove forest located in Bangladesh and India, primarily in the delta of the Ganges, Brahmaputra, and Meghna rivers. It is the largest single block of tidal halophytic mangrove forest in the world and is recognized as a UNESCO World Heritage Site. The Sundarbans is known for its rich biodiversity and unique ecosystem, serving as a habitat for various plant and animal species, including the iconic Bengal tiger. It is also home to other wildlife such as spotted deer, crocodiles, snakes, and numerous bird species. The Sundarbans is an important ecological region, providing protection against coastal erosion and acting as a natural barrier against storms and cyclones."
         },
         {
-            url: "https://images.pexels.com/photos/6152151/pexels-photo-6152151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "city",
-            description:
-                "Embark on an unforgettable journey across the open seas with our luxurious and state-of-the-art boats. Whether youre seeking thrilling adventures or peaceful escapes, our vessels offer the perfect blend of comfort and excitement. Experience the freedom and exhilaration of life on the water, as you explore new horizons and create lifelong memories with those closest to you",
             id: 3,
+            url: img,
+            title: "Saint Martin",
+            description:
+                "Bangladesh, located in South Asia, is a country known for its rich cultural heritage and natural beauty. It has a population of over 160 million people and is the eighth-most populous country in the world. The capital city is Dhaka. Bangladesh is renowned for its lush green landscapes, the Sundarbans mangrove forest, and the beautiful Cox's Bazar beach. Saint Martin, a small island off the coast of Bangladesh, is famous for its pristine beaches, clear turquoise waters, and vibrant coral reefs, making it a popular tourist destination."
         },
         {
-            url: "https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "italy",
-            description:
-                "Experience the pulse of the city and immerse yourself in the vibrant energy of our urban metropolis. From the bustling streets to the iconic landmarks, our city offers a never-ending array of sights, sounds, and experiences. Discover the diverse culture, world-class cuisine, and dynamic nightlife that make our city a destination like no other. Come explore and create unforgettable memories in the heart of the action.",
             id: 4,
+            url: img,
+            title: "Rangamati",
+            description:
+                "Rangamati is a picturesque district in southeastern Bangladesh. It is situated in the Chittagong Hill Tracts region, known for its stunning natural beauty and ethnic diversity. Rangamati is surrounded by hills, lush forests, and scenic lakes, including the breathtaking Kaptai Lake, which is the largest man-made lake in Bangladesh. The district is home to various indigenous communities, adding to its cultural richness. Rangamati offers opportunities for boating, hiking, and exploring tribal villages, allowing visitors to immerse themselves in the region's captivating landscapes and vibrant local traditions."
         },
         {
-            url: "https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "forest",
-            description:
-                "Discover the awe-inspiring beauty of nature in our enchanting forest. Immerse yourself in the tranquil surroundings, breathe in the fresh air, and allow yourself to be fully present in the moment. Experience the thrill of adventure as you hike, bike, or simply stroll through our stunning wilderness. Come explore the wonders of our forest and reconnect with the natural world in a truly unforgettable way.",
             id: 5,
+            url: imgOne,
+            title: "Sajek Valley",
+            description:
+                "Sajek Valley is a mesmerizing tourist destination located in the Rangamati district of Bangladesh. It is nestled in the Chittagong Hill Tracts region, surrounded by lush green hills and stunning landscapes. The valley offers panoramic views of the hills, clouds, and the Sajek River winding through the valley. It is renowned for its serene atmosphere, cool climate, and picturesque beauty. Visitors can enjoy activities like trekking, hiking, and exploring the indigenous villages nearby. Sajek Valley has become a popular getaway for nature lovers and adventure seekers seeking tranquility and natural splendor."
         },
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -119,13 +119,13 @@ const Home = () => {
                                 <div className="flex gap-4 pt-6">
                                     <div
                                         onClick={goToPrevious}
-                                        className=" text-5xl text-black cursor-pointer">
+                                        className="text-5xl text-black cursor-pointer">
                                         ❰
                                     </div>
 
                                     <div
                                         onClick={goToNext}
-                                        className=" text-5xl text-black cursor-pointer">
+                                        className="text-5xl text-black cursor-pointer">
                                         ❱
                                     </div>
                                 </div>
