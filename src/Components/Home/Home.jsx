@@ -11,11 +11,11 @@ import srImg from "../../assets/images/Sreemongol.png"
 const Home = () => {
     let slides = [
         {
+            id: 0,
             url: saImg,
             title: "Cox’s  Bazar",
             description:
-                "Cox Bazar is a coastal town in Bangladesh, known for having the world's longest natural sandy beach. It stretches approximately 120 kilometers along the Bay of Bengal. The area is a popular tourist destination, attracting visitors with its picturesque landscape and vibrant local culture. Cox Bazar offers various activities, including swimming, sunbathing, and exploring nearby attractions such as Himchari National Park and the Buddhist temples in Ramu. It is a serene retreat for nature lovers and a significant contributor to Bangladesh's tourism industry.",
-            id: 0,
+                "Cox Bazar is a coastal town in Bangladesh, known for having the world's longest natural sandy beach. It stretches approximately 120 kilometers along the Bay of Bengal. The area is a popular tourist destination, attracting visitors with its picturesque landscape and vibrant local culture. Cox Bazar offers various activities, including swimming, sunbathing, and exploring nearby attractions such as Himchari National Park and the Buddhist temples in Ramu. It is a serene retreat for nature lovers and a significant contributor to Bangladesh's tourism industry."
         },
         {
             id: 1,
@@ -80,13 +80,13 @@ const Home = () => {
                 alt="Background image"
                 className="absolute w-full h-full object-cover" />
             <div
-                className="relative z-10 mx-6">
+                className="mx-auto relative z-10">
                 <NavBar />
                 <div
                     className="pt-24 overflow-hidden">
                     <div>
                         <div
-                            className="lg:flex lg:gap-x-6">
+                            className="max-w-full pl-28 lg:flex lg:gap-x-6">
                             <div
                                 className="w-full lg:w-2/5 lg:shrink-0 ">
                                 <h1
@@ -120,7 +120,7 @@ const Home = () => {
                                     }
                                 </div>
                                 <div
-                                    className="flex gap-6 pt-14">
+                                    className="flex gap-6 pt-16">
                                     <div
                                         onClick={goToPrevious}
                                         className="text-3xl text-black bg-white p-2 rounded-full items-center cursor-pointer btn">

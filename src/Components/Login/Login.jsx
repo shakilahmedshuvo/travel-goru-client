@@ -28,8 +28,8 @@ const Login = () => {
         // userLogIn function
         userLogIn(email, password).then(result => {
             const logIn = result.user;
-            navigate(from, { replace: true })
             // show the toast
+            navigate(from, { replace: true })
             toast.success('Log in Successful')
         })
             .catch(error => {
