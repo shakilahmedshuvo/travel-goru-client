@@ -2,9 +2,14 @@ import { toast } from "react-hot-toast";
 import useAuth from "../Hooks/UseAuth";
 import fbLogo from '../assets/images/icons/fb.png';
 import googleLogo from '../assets/images/icons/google.png';
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
     const { googleSignIn, facebookSignIn } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
 
     // handleGoogleSignIn function
     const handleGoogleSignIn = () => {
@@ -12,6 +17,7 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
+                navigate(from, { replace: true });
                 toast.success('Your Google Login Successful')
             })
     };

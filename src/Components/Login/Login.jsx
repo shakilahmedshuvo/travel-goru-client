@@ -29,8 +29,8 @@ const Login = () => {
         userLogIn(email, password).then(result => {
             const logIn = result.user;
             // show the toast
-            navigate(from, { replace: true })
             toast.success('Log in Successful')
+            navigate(from, { replace: true })
         })
             .catch(error => {
                 toast.error('Wrong Password')
