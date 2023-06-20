@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
+import { FaArrowRight } from "react-icons/fa";
+import { MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import ActiveCard from "../ActiveCard/ActiveCard";
 import ImageSlider from "../ImageSlider/ImageSlider";
 import imgOne from "../../assets/images/Sajek.png"
@@ -80,7 +82,7 @@ const Home = () => {
                 className="relative z-10 mx-6">
                 <NavBar />
                 <div
-                    className="pt-16 h-fit overflow-hidden">
+                    className="pt-24 overflow-hidden">
                     <div>
                         <div
                             className="lg:flex lg:gap-x-6">
@@ -91,12 +93,12 @@ const Home = () => {
                                     {currentElement.title}
                                 </h1>
                                 <p
-                                    className="text-base lg:text-xl pb-5 text-justify">
+                                    className="text-base lg:text-base pb-5 text-justify">
                                     {currentElement.description}
                                 </p>
                                 <button
-                                    className="px-6 py-2 rounded-lg bg-yellow-500 text-black mb-6">
-                                    show more
+                                    className="px-20 py-3 rounded-lg bg-yellow-500 text-black text-xl mb-6 flex items-center">
+                                    Booking <FaArrowRight className="ml-3" />
                                 </button>
                             </div>
                             <div
@@ -116,17 +118,17 @@ const Home = () => {
                                         ))
                                     }
                                 </div>
-                                <div className="flex gap-4 pt-6">
+                                <div
+                                    className="flex gap-6 pt-14">
                                     <div
                                         onClick={goToPrevious}
-                                        className="text-5xl text-black cursor-pointer">
-                                        ❰
+                                        className="text-3xl text-black bg-white p-2 rounded-full items-center cursor-pointer">
+                                        <MdKeyboardDoubleArrowLeft />
                                     </div>
-
                                     <div
                                         onClick={goToNext}
-                                        className="text-5xl text-black cursor-pointer">
-                                        ❱
+                                        className="text-3xl text-black bg-white p-2 rounded-full items-center cursor-pointer">
+                                        <MdKeyboardDoubleArrowRight />
                                     </div>
                                 </div>
                             </div>

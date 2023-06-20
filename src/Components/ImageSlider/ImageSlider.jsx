@@ -14,7 +14,7 @@ const ImageSlider = ({ slide, click }) => {
             <div
                 className="absolute bottom-0 left-0 w-full p-4">
                 <h2
-                    className="text-white text-3xl font-bold uppercase">
+                    className="text-white text-3xl uppercase">
                     {slide.title}
                 </h2>
             </div>
