@@ -4,49 +4,50 @@ import { FaArrowRight } from "react-icons/fa";
 import { MdKeyboardDoubleArrowRight, MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import ActiveCard from "../ActiveCard/ActiveCard";
 import ImageSlider from "../ImageSlider/ImageSlider";
-import imgOne from "../../assets/images/Sajek.png"
-import img from "../../assets/images/sundorbon.png"
+import saImg from "../../assets/images/Sajek.png"
+import suImg from "../../assets/images/sundorbon.png"
+import srImg from "../../assets/images/Sreemongol.png"
 
 const Home = () => {
     let slides = [
         {
-            url: imgOne,
+            url: saImg,
             title: "Cox’s  Bazar",
             description:
-                "Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.",
+                "Cox Bazar is a coastal town in Bangladesh, known for having the world's longest natural sandy beach. It stretches approximately 120 kilometers along the Bay of Bengal. The area is a popular tourist destination, attracting visitors with its picturesque landscape and vibrant local culture. Cox Bazar offers various activities, including swimming, sunbathing, and exploring nearby attractions such as Himchari National Park and the Buddhist temples in Ramu. It is a serene retreat for nature lovers and a significant contributor to Bangladesh's tourism industry.",
             id: 0,
         },
         {
             id: 1,
-            url: img,
+            url: srImg,
             title: "Sreemangal",
             description:
                 "Sreemangal is a small town located in the northeastern part of Bangladesh. It is known as the tea capital of the country due to its vast tea gardens and plantations. The area is blessed with lush green landscapes, rolling hills, and numerous streams. Sreemangal is famous for its exquisite tea, especially the world-renowned seven-color tea.The region is also home to Lawachara National Park, a haven for wildlife and bird enthusiasts. The park is known for its diverse flora and fauna, including the critically endangered Hoolock gibbon. Sreemangal offers a peaceful and serene environment, attracting nature lovers and tourists alike.",
         },
         {
             id: 2,
-            url: img,
+            url: suImg,
             title: "Sundarbans",
             description:
                 "The Sundarbans is a vast mangrove forest located in Bangladesh and India, primarily in the delta of the Ganges, Brahmaputra, and Meghna rivers. It is the largest single block of tidal halophytic mangrove forest in the world and is recognized as a UNESCO World Heritage Site. The Sundarbans is known for its rich biodiversity and unique ecosystem, serving as a habitat for various plant and animal species, including the iconic Bengal tiger. It is also home to other wildlife such as spotted deer, crocodiles, snakes, and numerous bird species. The Sundarbans is an important ecological region, providing protection against coastal erosion and acting as a natural barrier against storms and cyclones."
         },
         {
             id: 3,
-            url: img,
+            url: saImg,
             title: "Saint Martin",
             description:
                 "Bangladesh, located in South Asia, is a country known for its rich cultural heritage and natural beauty. It has a population of over 160 million people and is the eighth-most populous country in the world. The capital city is Dhaka. Bangladesh is renowned for its lush green landscapes, the Sundarbans mangrove forest, and the beautiful Cox's Bazar beach. Saint Martin, a small island off the coast of Bangladesh, is famous for its pristine beaches, clear turquoise waters, and vibrant coral reefs, making it a popular tourist destination."
         },
         {
             id: 4,
-            url: img,
+            url: srImg,
             title: "Rangamati",
             description:
                 "Rangamati is a picturesque district in southeastern Bangladesh. It is situated in the Chittagong Hill Tracts region, known for its stunning natural beauty and ethnic diversity. Rangamati is surrounded by hills, lush forests, and scenic lakes, including the breathtaking Kaptai Lake, which is the largest man-made lake in Bangladesh. The district is home to various indigenous communities, adding to its cultural richness. Rangamati offers opportunities for boating, hiking, and exploring tribal villages, allowing visitors to immerse themselves in the region's captivating landscapes and vibrant local traditions."
         },
         {
             id: 5,
-            url: imgOne,
+            url: suImg,
             title: "Sajek Valley",
             description:
                 "Sajek Valley is a mesmerizing tourist destination located in the Rangamati district of Bangladesh. It is nestled in the Chittagong Hill Tracts region, surrounded by lush green hills and stunning landscapes. The valley offers panoramic views of the hills, clouds, and the Sajek River winding through the valley. It is renowned for its serene atmosphere, cool climate, and picturesque beauty. Visitors can enjoy activities like trekking, hiking, and exploring the indigenous villages nearby. Sajek Valley has become a popular getaway for nature lovers and adventure seekers seeking tranquility and natural splendor."
@@ -122,12 +123,12 @@ const Home = () => {
                                     className="flex gap-6 pt-14">
                                     <div
                                         onClick={goToPrevious}
-                                        className="text-3xl text-black bg-white p-2 rounded-full items-center cursor-pointer">
+                                        className="text-3xl text-black bg-white p-2 rounded-full items-center cursor-pointer btn">
                                         <MdKeyboardDoubleArrowLeft />
                                     </div>
                                     <div
                                         onClick={goToNext}
-                                        className="text-3xl text-black bg-white p-2 rounded-full items-center cursor-pointer">
+                                        className="text-3xl text-black bg-white p-2 rounded-full items-center cursor-pointer btn">
                                         <MdKeyboardDoubleArrowRight />
                                     </div>
                                 </div>
