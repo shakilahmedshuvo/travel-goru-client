@@ -18,7 +18,8 @@ const NavBar = () => {
 
     return (
         <div className='flex justify-evenly pt-8 max-w-7xl mx-auto'>
-            <div className="w-[10%] bg-white py-2 px-4 rounded-lg">
+            <div
+                className="w-[10%] bg-white py-2 px-4 rounded-lg mr-auto">
                 <Link
                     to='/'>
                     <img
@@ -27,14 +28,14 @@ const NavBar = () => {
                 </Link>
             </div>
             <form
-                className='relative rounded-lg px-7  outline-none bg-[#ffffff38] border border-white flex justify-center '>
+                className='relative rounded-lg px-28  outline-none bg-[#ffffff38] border border-white flex justify-center text-white mx-auto'>
                 <button
                     type='submit'
                     className='px-2 text-2xl mr-2'>
                     <BsSearch />
                 </button>
                 <input
-                    className='rounded-lg outline-none bg-transparent'
+                    className='rounded-lg outline-none bg-transparent text-white'
                     placeholder='Search Your Destination ...'
                     type="text"
                     name="search" />

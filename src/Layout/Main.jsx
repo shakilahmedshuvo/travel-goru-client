@@ -5,22 +5,14 @@ import { Helmet } from "react-helmet-async";
 
 const Main = () => {
     return (
-        <div
-            className="main-bg">
-            <div
-                className='bg-layer'>
-                <Helmet>
-                    <title>
-                        Home | Travel Guru
-                    </title>
-                </Helmet>
-                <NavBar />
-                <div
-                    className='container mx-auto flex flex-col justify-center h-screen'>
-                    <Outlet />
-                    <Toaster />
-                </div>
-            </div>
+        <div>
+            <Helmet>
+                <title>
+                    Home | Travel Guru
+                </title>
+            </Helmet>
+            <Outlet />
+            <Toaster />
         </div>
     );
 };

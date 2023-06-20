@@ -1,74 +1,67 @@
 import { useEffect, useState } from "react";
+import NavBar from "../NavBar/NavBar";
+import ActiveCard from "../ActiveCard/ActiveCard";
+import ImageSlider from "../ImageSlider/ImageSlider";
+import imgOne from "../../assets/images/Sajek.png"
+import img from "../../assets/images/sundorbon.png"
 
 const Home = () => {
     let slides = [
         {
-            id: 1,
-            url: "",
-            title: "Cox’s  Bazar",
+            url: imgOne,
+            title: "beach",
             description:
                 "Escape to the pristine sands and turquoise waters of our breathtaking beach. Experience ultimate relaxation, adventure, and serenity as you soak up the sun and let your worries wash away with the gentle waves. Come discover your perfect paradise and make memories that will last a lifetime.",
+            id: 0,
         },
         {
-            id: 2,
-            url: "",
-            title: "Sreemangal",
+            url: img,
+            title: "boat",
             description:
                 "Embark on an unforgettable journey across the open seas with our luxurious and state-of-the-art boats. Whether youre seeking thrilling adventures or peaceful escapes, our vessels offer the perfect blend of comfort and excitement. Experience the freedom and exhilaration of life on the water, as you explore new horizons and create lifelong memories with those closest to you",
+            id: 1,
         },
         {
-            id: 3,
-            url: "",
-            title: "Sundarbans",
+            url: "https://images.pexels.com/photos/2700573/pexels-photo-2700573.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            title: "forest",
             description:
                 "Discover the awe-inspiring beauty of nature in our enchanting forest. Immerse yourself in the tranquil surroundings, breathe in the fresh air, and allow yourself to be fully present in the moment. Experience the thrill of adventure as you hike, bike, or simply stroll through our stunning wilderness. Come explore the wonders of our forest and reconnect with the natural world in a truly unforgettable way.",
+            id: 2,
         },
         {
-            id: 4,
-            url: "",
-            title: "Santmartin",
+            url: "https://images.pexels.com/photos/6152151/pexels-photo-6152151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            title: "city",
             description:
-                "",
+                "Embark on an unforgettable journey across the open seas with our luxurious and state-of-the-art boats. Whether youre seeking thrilling adventures or peaceful escapes, our vessels offer the perfect blend of comfort and excitement. Experience the freedom and exhilaration of life on the water, as you explore new horizons and create lifelong memories with those closest to you",
+            id: 3,
         },
         {
-            id: 5,
-            url: "",
-            title: "Dhaka",
+            url: "https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            title: "italy",
             description:
                 "Experience the pulse of the city and immerse yourself in the vibrant energy of our urban metropolis. From the bustling streets to the iconic landmarks, our city offers a never-ending array of sights, sounds, and experiences. Discover the diverse culture, world-class cuisine, and dynamic nightlife that make our city a destination like no other. Come explore and create unforgettable memories in the heart of the action.",
+            id: 4,
         },
         {
-            id: 6,
-            url: "",
-            title: "Sajek Valley",
+            url: "https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            title: "forest",
             description:
                 "Discover the awe-inspiring beauty of nature in our enchanting forest. Immerse yourself in the tranquil surroundings, breathe in the fresh air, and allow yourself to be fully present in the moment. Experience the thrill of adventure as you hike, bike, or simply stroll through our stunning wilderness. Come explore the wonders of our forest and reconnect with the natural world in a truly unforgettable way.",
-        }
+            id: 5,
+        },
     ];
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const [dim, setDim] = useState([]);
-
     const goToPrevious = () => {
-        setCurrentIndex(currentIndex === 0
-            ?
-            slides.length - 1
-            :
-            currentIndex - 1);
+        setCurrentIndex(currentIndex === 0 ? slides.length - 1 : currentIndex - 1);
     };
 
     const goToNext = () => {
-        setCurrentIndex(currentIndex === slides.length - 1
-            ?
-            0
-            :
-            currentIndex + 1);
+        setCurrentIndex(currentIndex === slides.length - 1 ? 0 : currentIndex + 1);
     };
-
     const cardClick = (id) => {
         setCurrentIndex(id);
     };
-
     const currentElement = slides.find((element) => element.id === currentIndex);
     useEffect(() => {
         setDim([
@@ -76,12 +69,72 @@ const Home = () => {
             ...slides.filter((e) => e.id < currentIndex),
         ]);
     }, [currentIndex]);
-
     return (
-        <div>
-            this is home
+        <div
+            className="relative h-fit xl:h-screen text-white">
+            <img
+                src={currentElement.url}
+                alt="Background image"
+                className="absolute w-full h-full object-cover" />
+            <div
+                className="relative z-10 mx-6">
+                <NavBar />
+                <div
+                    className="pt-16 h-fit overflow-hidden">
+                    <div>
+                        <div
+                            className="lg:flex lg:gap-x-6">
+                            <div
+                                className="w-full lg:w-2/5 lg:shrink-0 ">
+                                <h1
+                                    className="text-5xl lg:text-8xl font-bold pb-6 uppercase">
+                                    {currentElement.title}
+                                </h1>
+                                <p
+                                    className="text-base lg:text-xl pb-5 text-justify">
+                                    {currentElement.description}
+                                </p>
+                                <button
+                                    className="px-6 py-2 rounded-lg bg-yellow-500 text-black mb-6">
+                                    show more
+                                </button>
+                            </div>
+                            <div
+                                className="w-max">
+                                <div
+                                    className="flex">
+                                    <ActiveCard
+                                        currentIndex={currentIndex}
+                                        bg={currentElement}
+                                        click={cardClick} />
+                                    {
+                                        dim.map((slide, i) => (
+                                            <ImageSlider
+                                                key={i}
+                                                slide={slide}
+                                                click={cardClick} />
+                                        ))
+                                    }
+                                </div>
+                                <div className="flex gap-4 pt-6">
+                                    <div
+                                        onClick={goToPrevious}
+                                        className=" text-5xl text-black cursor-pointer">
+                                        ❰
+                                    </div>
+
+                                    <div
+                                        onClick={goToNext}
+                                        className=" text-5xl text-black cursor-pointer">
+                                        ❱
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
-};
-
+}
 export default Home;
