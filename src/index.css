@@ -5,3 +5,7 @@
 * {
     font-family: 'Bebas Neue', sans-serif;
 }
+
+.input-field::placeholder {
+    color: white;
+}

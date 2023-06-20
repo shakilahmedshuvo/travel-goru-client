@@ -35,7 +35,7 @@ const NavBar = () => {
                     <BsSearch />
                 </button>
                 <input
-                    className='rounded-lg outline-none bg-transparent text-white'
+                    className='rounded-lg outline-none bg-transparent text-white input-field'
                     placeholder='Search Your Destination ...'
                     type="text"
                     name="search" />
