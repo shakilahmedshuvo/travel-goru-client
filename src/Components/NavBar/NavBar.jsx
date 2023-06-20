@@ -18,7 +18,7 @@ const NavBar = () => {
 
     return (
         <div className='flex justify-evenly pt-8 max-w-7xl mx-auto'>
-            <div className="w-[10%]">
+            <div className="w-[10%] bg-white py-2 px-4 rounded-lg">
                 <Link
                     to='/'>
                     <img
